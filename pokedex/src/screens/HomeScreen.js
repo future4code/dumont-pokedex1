@@ -1,8 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
+import PokemonGrid from '../components/HomeScreenComponents/PokemonGrid';
 
 const HomeScreen=() => {
     return(
-        <div>Tela Principal</div>
+        <div>
+            <Header />
+            <PokemonGrid />
+        </div>
     )
 }
 
