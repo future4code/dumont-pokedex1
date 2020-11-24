@@ -114,7 +114,6 @@ const PokemonGrid = () => {
             url:"https://picsum.photos/200/?a=18"
         }
     ]
-        
 
     return (
         <GridContainer>
