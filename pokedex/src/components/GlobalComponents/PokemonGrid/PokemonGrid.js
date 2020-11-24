@@ -84,7 +84,37 @@ const PokemonGrid = () => {
         {
             name:"raticate",
             url:"https://picsum.photos/200/?a=20"
-        }]
+        }
+    ]
+
+    //lista estática de pokemons selecionados
+    const pokedexList = [
+        {
+            name:"charizard",
+            url:"https://picsum.photos/200/?a=6"
+        },
+        {
+            name:"metapod",
+            url:"https://picsum.photos/200/?a=11"
+        },
+        {
+            name:"butterfree",
+            url:"https://picsum.photos/200/?a=12"
+        },
+        {
+            name:"kakuna",
+            url:"https://picsum.photos/200/?a=14"
+        },
+        {
+            name:"pidgeotto",
+            url:"https://picsum.photos/200/?a=17"
+        },
+        {
+            name:"pidgeot",
+            url:"https://picsum.photos/200/?a=18"
+        }
+    ]
+        
 
     return (
         <GridContainer>
