@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import PokedexGrid from '../components/PokedexScreenComponents/PokedexGrid'
+import Header from '../components/GlobalComponents/Header';
+import PokemonGrid from '../components/GlobalComponents/PokemonGrid';
 
 const PokedexScreen=() => {
     return(
         <div>
             <Header />
-            <PokedexGrid />
+            <PokemonGrid />
         </div>
     )
 }
