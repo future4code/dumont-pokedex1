@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
+        <header>
             Esse é o componente de Menu.
-        </div>
+        </header>
     )
 }
 
