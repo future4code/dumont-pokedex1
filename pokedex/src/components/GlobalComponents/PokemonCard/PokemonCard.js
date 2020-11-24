@@ -1,8 +1,11 @@
 import React from 'react';
 import { CardContainer, Img, FlexContainer, Button } from './styles';
 import { Route } from 'react-router-dom'
+import { goToPokemonDetails } from '../../../routes/coordinator'
+import { useHistory } from 'react-router-dom'
 
 const PokemonCard = (props) => {
+    const history = useHistory()
 
     const addToPokedex = (pokemon) => {
         window.alert(`O Pokemon ${pokemon.name} foi adicionado à sua Pokedex!`)
@@ -23,7 +26,7 @@ const PokemonCard = (props) => {
             <Route exact path={"/pokedex"}>
                 <Button onClick={()=> removeFromPokedex(props.pokemon)}>Remover da pokedex</Button>
             </Route>
-            <Button>Ver detalhes</Button>
+            <Button onClick={()=> goToPokemonDetails(history)}>Ver detalhes</Button>
             </FlexContainer>
         </CardContainer>
     )

@@ -36,4 +36,8 @@ export const FlexContainer = styled.div`
 export const Button = styled.button`
     width: 50%;
     padding: 5px;
+    
+    &:hover {
+        cursor: pointer;
+    }
 `
