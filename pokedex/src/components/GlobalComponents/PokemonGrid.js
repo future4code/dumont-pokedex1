@@ -1,5 +1,5 @@
 import React from 'react';
-import PokemonCard from '../PokemonCard';
+import PokemonCard from './PokemonCard';
 
 const PokemonGrid = () => {
     return (

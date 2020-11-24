@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '../components/GlobalComponents/Header';
 import Images from '../components/PokemonDetailScreenComponents/Images';
 import Moves from '../components/PokemonDetailScreenComponents/Moves';
 import Stats from '../components/PokemonDetailScreenComponents/Stats';

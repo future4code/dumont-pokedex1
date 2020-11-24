@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import PokemonGrid from '../components/HomeScreenComponents/PokemonGrid';
+import Header from '../components/GlobalComponents/Header';
+import PokemonGrid from '../components/GlobalComponents/PokemonGrid';
 
 const HomeScreen=() => {
     return(
