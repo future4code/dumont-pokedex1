@@ -7,6 +7,7 @@ const GlobalState = (props) => {
 
     const [pokemonList, setPokemonList] = useState([])
     const [pokedexList, setPokedexList] = useState([])
+    const [selectedPokemon, setSelectedPokemon] = useState({})
 
     const getPokemons = () => {
         axios
@@ -19,8 +20,8 @@ const GlobalState = (props) => {
             })
     }
 
-    const states = { pokemonList, pokedexList }
-    const setters = { setPokemonList, setPokedexList }
+    const states = { pokemonList, pokedexList, selectedPokemon }
+    const setters = { setPokemonList, setPokedexList, setSelectedPokemon }
     const requests = { getPokemons }
 
     const data = { states, setters, requests }
