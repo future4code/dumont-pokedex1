@@ -1,9 +1,20 @@
 import React from 'react';
 
+
+
+
 const Moves = () => {
     return (
         <div>
-            Esse é o componente de Ataques
+
+            <h3>Principais ataques</h3>
+
+            <p>Ataque1</p> 
+            <p>Ataque2</p>    
+            <p>Ataque3</p>
+            <p>Ataque4</p>
+            <p>Ataque5</p> 
+
         </div>
     )
 }

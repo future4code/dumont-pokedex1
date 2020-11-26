@@ -3,7 +3,10 @@ import React from "react";
 const Types = () => {
     return (
         <div>
-            Esse é o componente de Tipos.
+            <h3>Tipos</h3>
+
+            
+
         </div>
     )
 }
