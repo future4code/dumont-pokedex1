@@ -14,7 +14,7 @@ const HomeScreen=() => {
     return(
         <div>
             <Header />
-            <PokemonGrid list={states.pokemonList.results} />
+            <PokemonGrid list={states.pokemonList} />
         </div>
     )
 }

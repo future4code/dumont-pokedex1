@@ -10,7 +10,7 @@ const PokemonCard = (props) => {
     const history = useHistory()
 
     const [pokemonDetails, setPokemonDetails] = useState("")
-    const { setters } = useContext(GlobalStateContext)
+    const { states, setters } = useContext(GlobalStateContext)
 
     useEffect(() => {
         getPokemonDetails(props.pokemon.url);
@@ -28,6 +28,8 @@ const PokemonCard = (props) => {
     }
 
     const addToPokedex = (pokemon) => {
+        const newPokedexList = [...states.pokedexList, pokemon]
+        setters.setPokedexList(newPokedexList)
         window.alert(`O Pokemon ${pokemon.name} foi adicionado à sua Pokedex!`)
     }
 
