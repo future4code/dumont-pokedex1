@@ -10,7 +10,7 @@ const PokemonCard = (props) => {
     const history = useHistory()
 
     const [pokemonDetails, setPokemonDetails] = useState("")
-    const { setters } = useContext(GlobalStateContext)
+    const { states, setters } = useContext(GlobalStateContext)
 
     useEffect(() => {
         getPokemonDetails(props.pokemon.url);
@@ -27,12 +27,30 @@ const PokemonCard = (props) => {
             })
     }
 
-    const addToPokedex = (pokemon) => {
-        window.alert(`O Pokemon ${pokemon.name} foi adicionado à sua Pokedex!`)
+    const addToPokedex = (selectedPokemon) => {
+        const newPokedexList = [...states.pokedexList, selectedPokemon]
+
+        const newPokemonList = states.pokemonList.filter((pokemon) => {
+            return pokemon.name !== selectedPokemon.name
+        })
+
+        setters.setPokedexList(newPokedexList)
+        setters.setPokemonList(newPokemonList)
+
+        window.alert(`${selectedPokemon.name} foi adicionado à sua Pokédex!`)
     }
 
-    const removeFromPokedex = (pokemon) => {
-        window.alert(`O Pokemon ${pokemon.name} foi removido da sua Pokedex!`)
+    const removeFromPokedex = (selectedPokemon) => {
+        const newPokedexList = states.pokedexList.filter(pokemon => {
+            return pokemon.name !== selectedPokemon.name
+        })
+
+        const newPokemonList = [...states.pokemonList, selectedPokemon]
+
+        setters.setPokedexList(newPokedexList)
+        setters.setPokemonList(newPokemonList)
+
+        window.alert(`${selectedPokemon.name} foi removido da sua Pokédex!`)
     }
 
     const seeDetails = (pokemon) => {
@@ -43,13 +61,13 @@ const PokemonCard = (props) => {
     return (
         <CardContainer>
             <h4>{props.pokemon.name}</h4>
-            {pokemonDetails && <Img src={pokemonDetails.sprites.front_default} alt={`Foto do Pokemon ${props.pokemon.name}`}/>}
+            {pokemonDetails && <Img src={pokemonDetails.sprites.front_default} alt={`Foto do Pokémon ${props.pokemon.name}`}/>}
             <FlexContainer>
             <Route exact path={"/"}>
-                <Button onClick={()=> addToPokedex(props.pokemon)}>Adicionar a pokedex</Button>
+                <Button onClick={()=> addToPokedex(props.pokemon)}>Adicionar a Pokédex</Button>
             </Route>
             <Route exact path={"/pokedex"}>
-                <Button onClick={()=> removeFromPokedex(props.pokemon)}>Remover da pokedex</Button>
+                <Button onClick={()=> removeFromPokedex(props.pokemon)}>Remover da Pokédex</Button>
             </Route>
             <Button onClick={()=> seeDetails(props.pokemon)}>Ver detalhes</Button>
             </FlexContainer>
