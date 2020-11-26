@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { HeaderContainer, ScreenTitle, HeaderButton } from './styles';
+import { HeaderContainer, ScreenTitle, PokemonLogo, HeaderButton } from './styles';
 import { Route, Switch } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { goToPokedexScreen, goToHomeScreen, goBack } from '../../../routes/coordinator'
 import GlobalStateContext from '../../../global/GlobalStateContext';
+import pokemonLogo from '../../../assets/pokemon-logo.png'
 
 const Header = () => {
     const history = useHistory()
@@ -14,7 +15,7 @@ const Header = () => {
             <Switch>
                 <Route exact path={"/"}>
                     <HeaderButton onClick={() => goToPokedexScreen(history)}>Ir para Pokédex</HeaderButton>
-                    <ScreenTitle>Lista de Pokémons</ScreenTitle>
+                    <PokemonLogo src={pokemonLogo} alt={"Pokémon Logo"} />
                 </Route>
 
                 <Route exact path={"/pokedex"}>

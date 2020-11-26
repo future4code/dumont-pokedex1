@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { CardContainer, Img, FlexContainer, Button } from './styles';
+import { CardContainer, Title, Img, FlexContainer, Button } from './styles';
 import { Route } from 'react-router-dom'
 import { goToPokemonDetails } from '../../../routes/coordinator'
 import { useHistory } from 'react-router-dom'
@@ -8,7 +8,6 @@ import GlobalStateContext from '../../../global/GlobalStateContext';
 
 const PokemonCard = (props) => {
     const history = useHistory()
-
     const [pokemonDetails, setPokemonDetails] = useState("")
     const { states, setters } = useContext(GlobalStateContext)
 
@@ -60,11 +59,11 @@ const PokemonCard = (props) => {
 
     return (
         <CardContainer>
-            <h4>{props.pokemon.name}</h4>
+            <Title>{props.pokemon.name}</Title>
             {pokemonDetails && <Img src={pokemonDetails.sprites.front_default} alt={`Foto do Pokémon ${props.pokemon.name}`}/>}
             <FlexContainer>
             <Route exact path={"/"}>
-                <Button onClick={()=> addToPokedex(props.pokemon)}>Adicionar a Pokédex</Button>
+                <Button onClick={()=> addToPokedex(props.pokemon)}>Adicionar à Pokédex</Button>
             </Route>
             <Route exact path={"/pokedex"}>
                 <Button onClick={()=> removeFromPokedex(props.pokemon)}>Remover da Pokédex</Button>
