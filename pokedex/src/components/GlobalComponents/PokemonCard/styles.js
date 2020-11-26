@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darkBlue, lightBlue, yellow, shadowYellow } from '../../../constants/colors'
 
 export const CardContainer = styled.div`
     * {
@@ -7,6 +8,7 @@ export const CardContainer = styled.div`
         padding: 0;
     }
     
+    background: radial-gradient(${darkBlue}, ${lightBlue});
     width: 80%;
     display: flex;
     padding: 20px;
@@ -23,7 +25,13 @@ export const CardContainer = styled.div`
     }
 `
 
+export const Title = styled.h3`
+    font-size: 1.8rem;
+    color: #FFF;
+`
+
 export const Img = styled.img`
+    background-color: #FFF;
     width: 100%;
     border-radius: 5px;
 `
@@ -36,8 +44,11 @@ export const FlexContainer = styled.div`
 export const Button = styled.button`
     width: 50%;
     padding: 5px;
+    border-radius: 5px;
+    background-color: ${yellow};
     
     &:hover {
         cursor: pointer;
+        background-color: ${shadowYellow}
     }
 `

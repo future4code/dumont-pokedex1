@@ -1,15 +1,21 @@
 import styled from 'styled-components';
+import { darkBlue, lightBackground, lightBlue } from '../../../constants/colors';
 
 export const HeaderContainer = styled.header`
-    display: grid;
-    grid-template-columns: 1fr 6fr 1.5fr;
-    justify-items: center;
+    background: ${lightBackground};
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
     background-color: #34B4FF;
 `
 
 export const ScreenTitle = styled.h1`
     color: white;
+`
+
+export const PokemonLogo = styled.img`
+    width: 25%;
 `
 
 export const HeaderButton = styled.button`
