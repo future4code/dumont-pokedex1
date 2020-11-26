@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GlobalStateContext from './GlobalStateContext';
 import { BASE_URL } from '../constants/url';
 import axios from 'axios';
@@ -19,6 +19,10 @@ const GlobalState = (props) => {
                 console.log(error)
             })
     }
+
+    useEffect(() => {
+        requests.getPokemons();
+    },[]);
 
     const states = { pokemonList, pokedexList, selectedPokemon }
     const setters = { setPokemonList, setPokedexList, setSelectedPokemon }
