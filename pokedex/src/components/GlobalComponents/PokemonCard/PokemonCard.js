@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CardContainer, Img, FlexContainer, Button } from './styles';
 import { Route } from 'react-router-dom'
 import { goToPokemonDetails } from '../../../routes/coordinator'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+import GlobalStateContext from '../../../global/GlobalStateContext';
 
 const PokemonCard = (props) => {
     const history = useHistory()
 
     const [pokemonDetails, setPokemonDetails] = useState("")
+    const { setters } = useContext(GlobalStateContext)
 
     useEffect(() => {
         getPokemonDetails(props.pokemon.url);
@@ -33,6 +35,11 @@ const PokemonCard = (props) => {
         window.alert(`O Pokemon ${pokemon.name} foi removido da sua Pokedex!`)
     }
 
+    const seeDetails = (pokemon) => {
+        setters.setSelectedPokemon(pokemon)
+        goToPokemonDetails(history)
+    }
+
     return (
         <CardContainer>
             <h4>{props.pokemon.name}</h4>
@@ -44,7 +51,7 @@ const PokemonCard = (props) => {
             <Route exact path={"/pokedex"}>
                 <Button onClick={()=> removeFromPokedex(props.pokemon)}>Remover da pokedex</Button>
             </Route>
-            <Button onClick={()=> goToPokemonDetails(history)}>Ver detalhes</Button>
+            <Button onClick={()=> seeDetails(props.pokemon)}>Ver detalhes</Button>
             </FlexContainer>
         </CardContainer>
     )

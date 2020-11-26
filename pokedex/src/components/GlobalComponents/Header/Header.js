@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HeaderContainer, ScreenTitle, HeaderButton } from './styles';
 import { Route, Switch } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { goToPokedexScreen, goToHomeScreen, goBack } from '../../../routes/coordinator'
+import GlobalStateContext from '../../../global/GlobalStateContext';
 
 const Header = () => {
     const history = useHistory()
+    const { states } = useContext(GlobalStateContext)
 
     return (
         <HeaderContainer>
@@ -22,7 +24,7 @@ const Header = () => {
                     
                 <Route exact path={"/pokemondetails"}>
                     <HeaderButton onClick={() => goBack(history)}>Voltar</HeaderButton>
-                    <ScreenTitle>Nome do Pokémon - Ver na API</ScreenTitle>
+                    <ScreenTitle>{states.selectedPokemon.name}</ScreenTitle>
                     <HeaderButton onClick={() => goToPokedexScreen(history)}>Ir para Pokédex</HeaderButton>
                 </Route>
             </Switch>
