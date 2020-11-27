@@ -7,9 +7,9 @@ const Types = (props) => {
 
             <h3>Tipo</h3>
             
-            {props.types && props.types.map ((type) => {
+            {props.types && props.types.map ((type, id) => {
                 return (
-                    <p>{type.type.name}</p>
+                    <p key= {id}>{type.type.name}</p>
                 )
             } )}    
 
