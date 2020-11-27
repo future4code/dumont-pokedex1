@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { HeaderContainer, ScreenTitle, PokemonLogo, HeaderButton } from './styles';
+import { HeaderContainer, ScreenTitle, PokemonLogo, ButtonsContainer, HeaderButton } from './styles';
 import { Route, Switch } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { goToPokedexScreen, goToHomeScreen, goBack } from '../../../routes/coordinator'
@@ -24,9 +24,11 @@ const Header = () => {
                 </Route>
                     
                 <Route exact path={"/pokemondetails"}>
-                    <HeaderButton onClick={() => goBack(history)}>Voltar</HeaderButton>
-                    <ScreenTitle>{states.selectedPokemon.name}</ScreenTitle>
-                    <HeaderButton onClick={() => goToPokedexScreen(history)}>Ir para Pokédex</HeaderButton>
+                    <ButtonsContainer>
+                        <HeaderButton onClick={() => goBack(history)}>Voltar</HeaderButton>
+                        <HeaderButton onClick={() => goToPokedexScreen(history)}>Ir para Pokédex</HeaderButton>
+                    </ButtonsContainer>
+                    <ScreenTitle>{states.selectedPokemon.name}</ScreenTitle> 
                 </Route>
             </Switch>
         </HeaderContainer>

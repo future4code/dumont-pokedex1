@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lightBackground } from '../../../constants/colors';
+import { lightBackground, yellow, shadowYellow } from '../../../constants/colors';
 
 export const HeaderContainer = styled.header`
     background: ${lightBackground};
@@ -11,20 +11,43 @@ export const HeaderContainer = styled.header`
 
     @media (min-device-width: 320px) and (max-device-width: 420px) { 
         width: 100vw;
+        flex-direction: column-reverse;
+        padding-top: 20px;
     }
 `
 
 export const ScreenTitle = styled.h1`
     color: white;
+    
+    @media (min-device-width: 320px) and (max-device-width: 420px) { 
+        order: 1;
+    }
 `
 
 export const PokemonLogo = styled.img`
     width: 25%;
+    
+    @media (min-device-width: 320px) and (max-device-width: 420px) { 
+        width: 80vw;
+    }
+`
+
+export const ButtonsContainer = styled.div`
+    display: flex;
 `
 
 export const HeaderButton = styled.button`
-    margin: 10px;
+    /* margin: 10px;
     border-radius: 5px;
     font-size: 16px;
-    padding: 6px;
+    padding: 6px; */
+
+    padding: 5px;
+    border-radius: 5px;
+    background-color: ${yellow};
+    
+    &:hover {
+        cursor: pointer;
+        background-color: ${shadowYellow}
+    }
 `
