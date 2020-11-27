@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { darkBlue, lightBackground, lightBlue } from '../../../constants/colors';
+import { lightBackground } from '../../../constants/colors';
 
 export const HeaderContainer = styled.header`
     background: ${lightBackground};
@@ -8,6 +8,10 @@ export const HeaderContainer = styled.header`
     justify-content: space-around;
     align-items: center;
     background-color: #34B4FF;
+
+    @media (min-device-width: 320px) and (max-device-width: 420px) { 
+        width: 100vw;
+    }
 `
 
 export const ScreenTitle = styled.h1`
