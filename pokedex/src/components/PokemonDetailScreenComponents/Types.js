@@ -1,11 +1,17 @@
 import React from "react";
 
-const Types = () => {
+const Types = (props) => {
+    
     return (
         <div>
-            <h3>Tipos</h3>
 
+            <h3>Tipo</h3>
             
+            {props.types && props.types.map ((type) => {
+                return (
+                    <p>{type.type.name}</p>
+                )
+            } )}    
 
         </div>
     )

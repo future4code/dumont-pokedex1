@@ -8,19 +8,21 @@ const ImagesContainer = styled.div`
     margin-top: 20px;
     img {
         margin: 5px;
-        max-width: 100px;
+        width: 200px;
     }
 `
-
-
-
-const Images = () => {
+const Images = (props) => {
+    
     return (
         <ImagesContainer>
-            <img src= 'https://picsum.photos/100' />
-            <img src= 'https://picsum.photos/101' />
+
+            {props.front}      
+            {props.back}
+            
         </ImagesContainer>
     )
+    
 }
+
 
 export default Images
