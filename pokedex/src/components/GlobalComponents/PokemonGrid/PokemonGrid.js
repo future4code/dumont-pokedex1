@@ -6,7 +6,7 @@ const PokemonGrid = (props) => {
 
     return (
         <GridContainer>
-            {props.list !== undefined && props.list.map((pokemon, id) => {
+            {props.list && props.list.map((pokemon, id) => {
                 return <PokemonCard key={id} pokemon={pokemon} />
             })}
         </GridContainer>

@@ -10,7 +10,7 @@ const PokedexScreen=() => {
     return(
         <div>
             <Header />
-            <PokemonGrid list={states.pokedexList}/>
+            {states.pokedexList.length !== 0 && <PokemonGrid list={states.pokedexList} />}
         </div>
     )
 }

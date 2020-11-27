@@ -10,7 +10,7 @@ const HomeScreen=() => {
     return(
         <div>
             <Header />
-            <PokemonGrid list={states.pokemonList} />
+            {states.pokemonList.length !== 0 && <PokemonGrid list={states.pokemonList} />}
         </div>
     )
 }
