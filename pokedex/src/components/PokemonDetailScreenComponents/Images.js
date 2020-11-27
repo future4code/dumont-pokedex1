@@ -8,8 +8,7 @@ const Images = (props) => {
             {props.front}      
             {props.back}
         </ImagesContainer>
-    )
-    
+    )    
 }
 
 
