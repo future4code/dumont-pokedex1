@@ -1,9 +1,10 @@
 import React from "react";
+import { TypesContainer } from './styles';
 
 const Types = (props) => {
     
     return (
-        <div>
+        <TypesContainer>
 
             <h3>Tipo</h3>
             
@@ -13,7 +14,7 @@ const Types = (props) => {
                 )
             } )}    
 
-        </div>
+        </TypesContainer>
     )
 }
 

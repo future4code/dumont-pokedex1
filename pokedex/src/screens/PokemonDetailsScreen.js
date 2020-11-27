@@ -6,7 +6,8 @@ import Stats from '../components/PokemonDetailScreenComponents/Stats';
 import Types from '../components/PokemonDetailScreenComponents/Types';
 import GlobalStateContext from '../global/GlobalStateContext';
 import axios from 'axios'
-import { PokemonDetailsScreenContainer } from '../screens/styles'
+import { PokemonDetailsScreenContainer, TypesMovesContainer } from '../components/PokemonDetailScreenComponents/styles'
+import { Img } from '../components/GlobalComponents/PokemonCard/styles';
 
 
 const PokemonDetailsScreen=() => {
@@ -35,14 +36,15 @@ const PokemonDetailsScreen=() => {
             <Header />
             <PokemonDetailsScreenContainer>    
                 <Images 
-                    front={pokemonDetails && <img src= {pokemonDetails.sprites.front_default} /> } 
-                    back={pokemonDetails && <img src= {pokemonDetails.sprites.back_default} /> }                 
+                    front={pokemonDetails && <Img src= {pokemonDetails.sprites.front_default} alt= {`Foto frontal de ${states.selectedPokemon.name}`} /> } 
+                    back={pokemonDetails && <Img src= {pokemonDetails.sprites.back_default} alt= {`Foto traseira de ${states.selectedPokemon.name}`} /> }                 
                 />
+
                 <Stats 
                     stats= {pokemonDetails.stats}
                 />
 
-                <p>
+                <TypesMovesContainer>
                     <Types 
                         types={pokemonDetails.types} 
                     /> 
@@ -51,7 +53,7 @@ const PokemonDetailsScreen=() => {
                         moves={pokemonDetails.moves}
                     />
                     
-                </p>
+                </TypesMovesContainer>
 
             </PokemonDetailsScreenContainer>
 

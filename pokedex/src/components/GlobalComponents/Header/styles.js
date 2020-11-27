@@ -34,15 +34,11 @@ export const PokemonLogo = styled.img`
 
 export const ButtonsContainer = styled.div`
     display: flex;
+    gap: 20px;
 `
 
 export const HeaderButton = styled.button`
-    /* margin: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 6px; */
-
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
     background-color: ${yellow};
     
