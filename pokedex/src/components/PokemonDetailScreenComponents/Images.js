@@ -8,7 +8,7 @@ const ImagesContainer = styled.div`
     margin-top: 20px;
     img {
         margin: 5px;
-        max-width: 100px;
+        width: 200px;
     }
 `
 const Images = (props) => {
