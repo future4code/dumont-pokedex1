@@ -4,14 +4,10 @@ import Images from '../components/PokemonDetailScreenComponents/Images';
 import Moves from '../components/PokemonDetailScreenComponents/Moves';
 import Stats from '../components/PokemonDetailScreenComponents/Stats';
 import Types from '../components/PokemonDetailScreenComponents/Types';
-import styled from 'styled-components'
 import GlobalStateContext from '../global/GlobalStateContext';
 import axios from 'axios'
+import { PokemonDetailsScreenContainer } from '../screens/styles'
 
-const PokemonDetailsScreenContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-`
 
 const PokemonDetailsScreen=() => {
 
@@ -42,17 +38,20 @@ const PokemonDetailsScreen=() => {
                     front={pokemonDetails && <img src= {pokemonDetails.sprites.front_default} /> } 
                     back={pokemonDetails && <img src= {pokemonDetails.sprites.back_default} /> }                 
                 />
-                <Stats />
+                <Stats 
+                    stats= {pokemonDetails.stats}
+                />
 
-                <div>
+                <p>
                     <Types 
-                        types={pokemonDetails && pokemonDetails.types} 
+                        types={pokemonDetails.types} 
                     /> 
 
-                   
-                    <Moves />
+                    <Moves 
+                        moves={pokemonDetails.moves}
+                    />
                     
-                </div>
+                </p>
 
             </PokemonDetailsScreenContainer>
 

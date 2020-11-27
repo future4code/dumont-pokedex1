@@ -3,17 +3,17 @@ import React from 'react';
 
 
 
-const Moves = () => {
+const Moves = (props) => {
     return (
         <div>
 
             <h3>Principais ataques</h3>
 
-            <p>Ataque1</p> 
-            <p>Ataque2</p>    
-            <p>Ataque3</p>
-            <p>Ataque4</p>
-            <p>Ataque5</p> 
+            <p> {props.moves && props.moves[0].move.name} </p>
+            <p> {props.moves && props.moves[1].move.name} </p>
+            <p> {props.moves && props.moves[2].move.name} </p>
+            <p> {props.moves && props.moves[3].move.name} </p>
+            <p> {props.moves && props.moves[4].move.name} </p>
 
         </div>
     )
