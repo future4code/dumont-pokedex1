@@ -5,12 +5,15 @@ Nome dos integrantes:
 - Marina Azzi Nogueira
 - Pablo Machado Aguiar
 
-Link do Surge: www.link.com.br
+Link do Surge: https://abiding-stew.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+- Responsividade
+- Funções de adicionar e remover pokémons da Pokédex
+- Função de ver detalhes do pokémon
+- Rotas
+- Renderização condicional do menu e dos botões dos cards de pokémon
+- Animações no card
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Ordenação dos pokémons quando algum é deletado da Pokédex e volta para a lista principal
